@@ -1,6 +1,6 @@
-## LlamaFolio Labels
+## FetchStation Labels
 
-This repository holds the information for the LlamaFolio app to categorize address labels.
+This repository holds the information for the Fetchstation app to categorize address labels.
 
 The available labels to use for address are two types: helpful information and social media.
 

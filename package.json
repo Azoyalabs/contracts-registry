@@ -1,7 +1,7 @@
 {
-  "name": "@llamafolio/labels",
+  "name": "@azoyalabs/labels",
   "version": "0.1.2",
-  "description": "List of labels used by LlamaFolio.",
+  "description": "List of labels used by FetchStation.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
@@ -10,27 +10,26 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "format": "prettier --ignore-path .gitignore '**/*.{md,json,js,ts}' --write",
-    "postinstall": "npm run update-twitter-labels",
     "prepublishOnly": "npm run build",
-    "start": "npm run build && node build/index.js",
-    "update-twitter-labels": "curl -o twitter-labels.json https://raw.githubusercontent.com/ultrasoundmoney/ens_twitter_accounts/main/ens_twitter.json"
+    "start": "npm run build && node build/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/llamafolio/llamafolio-labels.git"
+    "url": "git+https://github.com/azoyalabs/fetchstation-labels.git"
   },
   "keywords": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/llamafolio/llamafolio-labels/issues"
+    "url": "https://github.com/azoyalabs/fetchstation-labels/issues"
   },
-  "homepage": "https://github.com/llamafolio/llamafolio-labels#readme",
+  "homepage": "https://github.com/azoyalabs/fetchstation-labels#readme",
   "devDependencies": {
+    "@types/node": "^18.11.18",
     "@types/webpack-env": "^1.18.0",
+    "prettier": "^2.7.1",
     "ts-loader": "^9.4.1",
     "typescript": "^4.8.3",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "prettier": "^2.7.1"
+    "webpack-cli": "^4.10.0"
   }
 }
