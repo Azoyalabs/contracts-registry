@@ -37,13 +37,7 @@ export interface AddressLabels {
 /**
  * @param address lowercase hex string. ex: "0x0000000000000000000000000000000000000000"
  */
-export function getLabel(address: string): AddressLabels {
+export function getLabel(address: string): AddressLabels | null {
   const registryLabels = registry[address];
-
-  const labelt = {
-    links: registryLabels?.links ?? {},
-    labels: registryLabels?.labels ?? [],
-  };
-
-  return labelt;
+  return registryLabels ?? null;
 }

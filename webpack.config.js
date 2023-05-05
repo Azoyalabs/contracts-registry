@@ -17,7 +17,7 @@ module.exports = {
   },
   output: {
     filename: "index.js",
-    library: "llamafolio-labels",
+    library: "azoyalabs-labels",
     libraryTarget: "umd",
     path: path.resolve(__dirname, "build"),
     globalObject: "this",
