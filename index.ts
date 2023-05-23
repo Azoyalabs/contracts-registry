@@ -1,11 +1,9 @@
-// import twitterLabels from "./twitter-labels.json";
-
-// Read all files from "labels" folder using webpack
-// and create a mapping of address - labels
+// Read all files from "drops" folder using webpack
+// and create a mapping of names - drops
 function requireAll(requireContext: any) {
   const keys = requireContext.keys();
   const values = keys.map(requireContext);
-  const registry: { [chain: string]: AddressLabels } = {};
+  const registry: { [chain: string]: Stakedrop } = {};
 
   for (let i = 0; i < keys.length; i++) {
     const addressWithoutExtension = keys[i].split(".json")[0];
@@ -18,26 +16,76 @@ function requireAll(requireContext: any) {
   return registry;
 }
 
-const registry: { [key: string]: AddressLabels } = requireAll(
-  require.context("./labels", false, /.json$/)
+const registry: { [key: string]: Stakedrop } = requireAll(
+  require.context("./drops", false, /.json$/)
 );
 
-export interface Label {
-  type: "info" | "warning" | "danger";
-  value: string;
+/**
+ * @title Fetchstation Stakedrop Schema
+ */
+export interface Stakedrop {
+  /**
+   * @title Project name
+   */
+  name: string;
+
+  /**
+   * @title Website link for the project
+   */
+  website: string;
+
+  /**
+   * @title Link to the project's logo
+   */
+  logo: string;
+
+  /**
+   * @title Short description of the project
+   */
+  description: string;
+
+  /**
+   * @title Start date for the drop
+   */
+  start?: Date;
+
+  /**
+   * @title End date for the drop
+   */
+  ends: Date;
+
+  /**
+   * @title Claim link for the project
+   */
+  claim: string;
+
+  socials?: {
+    /**
+     * @title Telegram link for the project
+     */
+    twitter?: string;
+
+    /**
+     * @title Github link for the project
+     */
+    github?: string;
+
+    /**
+     * @title Telegram link for the project
+     */
+    telegram?: string;
+  };
+  type: "project" | "blockchain";
 }
 
-type SocialLabel = "twitter" | "telegram" | "github";
-
-export interface AddressLabels {
-  labels: Label[];
-  links: { [k in SocialLabel]: string };
+export function getRegistry() {
+  return registry;
 }
 
 /**
- * @param address lowercase hex string. ex: "0x0000000000000000000000000000000000000000"
+ * @param slug lowercase project name slug. ex: "my-cool-project"
  */
-export function getLabel(address: string): AddressLabels | null {
-  const registryLabels = registry[address];
-  return registryLabels ?? null;
+export function getDrop(slug: string): Stakedrop | null {
+  const registryDrops = registry[slug];
+  return registryDrops ?? null;
 }

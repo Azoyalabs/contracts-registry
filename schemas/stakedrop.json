@@ -1,0 +1,77 @@
+{
+  "$ref": "#/definitions/Stakedrop",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Stakedrop": {
+      "additionalProperties": false,
+      "properties": {
+        "claim": {
+          "title": "Claim link for the project",
+          "type": "string"
+        },
+        "description": {
+          "title": "Short description of the project",
+          "type": "string"
+        },
+        "ends": {
+          "format": "date-time",
+          "title": "End date for the drop",
+          "type": "string"
+        },
+        "logo": {
+          "title": "Link to the project's logo",
+          "type": "string"
+        },
+        "name": {
+          "title": "Project name",
+          "type": "string"
+        },
+        "socials": {
+          "additionalProperties": false,
+          "properties": {
+            "github": {
+              "title": "Github link for the project",
+              "type": "string"
+            },
+            "telegram": {
+              "title": "Telegram link for the project",
+              "type": "string"
+            },
+            "twitter": {
+              "title": "Telegram link for the project",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "start": {
+          "format": "date-time",
+          "title": "Start date for the drop",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "project",
+            "blockchain"
+          ],
+          "type": "string"
+        },
+        "website": {
+          "title": "Website link for the project",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "website",
+        "logo",
+        "description",
+        "ends",
+        "claim",
+        "type"
+      ],
+      "title": "Fetchstation Stakedrop Schema",
+      "type": "object"
+    }
+  }
+}
