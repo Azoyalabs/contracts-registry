@@ -1,39 +1,33 @@
-## FetchStation Labels
+## Stakedrops listing
 
-This repository holds the information for the Fetchstation app to categorize address labels.
+This repository holds the information for the Fetchstation app to list upcoming stakedrops.
 
-The available labels to use for address are two types: helpful information and social media.
 
-## Labels for an Address
+## Stakedrop info
 
-To add labels for an address, you need to create a new JSON file under the [labels](/labels) folder.
+To add a new drop, you need to create a new JSON file under the [drops](/drops) folder.
 
 The content of the file should be like this:
 
 ```JSON
 {
-  "labels": [{ "type": "info", "value": "LlamaFolio" }],
-  "links": {
-    "twitter": "https://twitter.com/llamafolio"
-  }
+    "name": "Veum Stroman",
+    "website": "https://loremflickr.com/640/480/business",
+    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+    "ends": "2024-05-07T14:20:56.507Z",
+    "start": "2023-08-16T07:59:50.479Z",
+    "logo": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/705.jpg",
+    "socials": {
+        "telegram": "",
+        "github": "",
+        "twitter": ""
+    },
+    "type": "blockchain",
+    "claim": ""
 }
 ```
 
-Each label is represented as an object with type and value properties.
 
-To add a new label, use the following chart to know the property type.
+The name of the file should be a slug. Following our example ```Veum Stroman``` that would be ```veum-stroman```
 
-| Type    | Color  | Useful For                                |
-| ------- | ------ | ----------------------------------------- |
-| info    | blue   | Known addresses or useful services        |
-| warning | yellow | Exploited contracts or dangerous services |
-| danger  | red    | Hackers, exploiters, or scammer addresses |
-
-For social media links, only the following networks are available:
-
-| Social Media |
-| ------------ |
-| twitter      |
-| telegram     |
-| github       |
-| website      |
+Type can either be ```blockchain```or ```project```. With blockchain to be preferred for launching actual chains. 
