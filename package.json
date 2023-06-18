@@ -1,14 +1,14 @@
 {
-  "name": "@azoyalabs/stakedrops-listing",
-  "version": "0.0.2",
-  "description": "Registered stakedrops for listing",
+  "name": "@azoyalabs/contracts-registry",
+  "version": "0.0.1",
+  "description": "Registered CosmWasm smart contract code ids for listing",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
     "build"
   ],
   "scripts": {
-    "schema": "ts-json-schema-generator --path ./types/stakedrop.ts -o ./schemas/stakedrop.json",
+    "schema": "ts-json-schema-generator --path ./types/contract_records.ts -o ./schemas/contract_records.json",
     "build": "webpack --config webpack.config.js",
     "format": "prettier --ignore-path .gitignore '**/*.{md,json,js,ts}' --write",
     "prepublishOnly": "npm run build",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Azoyalabs/stakedrops-listing.git"
+    "url": "git+https://github.com/Azoyalabs/contracts-registry.git"
   },
   "keywords": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Azoyalabs/stakedrops-listing/issues"
+    "url": "https://github.com/Azoyalabs/contracts-registry/issues"
   },
-  "homepage": "https://github.com/Azoyalabs/stakedrops-listing#readme",
+  "homepage": "https://github.com/Azoyalabs/contracts-registry#readme",
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@types/webpack-env": "^1.18.0",

@@ -17,7 +17,7 @@ module.exports = {
   },
   output: {
     filename: "index.js",
-    library: "azoyalabs-stakedrops",
+    library: "azoyalabs-contracts-registry",
     libraryTarget: "umd",
     path: path.resolve(__dirname, "build"),
     globalObject: "this",

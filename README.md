@@ -1,33 +1,19 @@
-## Stakedrops listing
+## Contracts listing
 
-This repository holds the information for the Fetchstation app to list upcoming stakedrops.
+This repository holds the information for the Fetchstation app to list validated smart contracts, based on their code id.
 
 
-## Stakedrop info
+## Contracts info
 
-To add a new drop, you need to create a new JSON file under the [drops](/drops) folder.
+To add information on a new contract, you need to create a new entry in the JSON file for the appropriate network under the [records](/records) folder.
 
-The content of the file should be like this:
+The content of the entry should be like this:
 
 ```JSON
 {
-    "name": "Veum Stroman",
-    "website": "https://loremflickr.com/640/480/business",
-    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-    "ends": "2024-05-07T14:20:56.507Z",
-    "start": "2023-08-16T07:59:50.479Z",
-    "logo": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/705.jpg",
-    "socials": {
-        "telegram": "",
-        "github": "",
-        "twitter": ""
-    },
-    "type": "blockchain",
-    "claim": ""
+    "6688": {
+        "owner": "Azoyalabs",
+        "website": "https://www.fetns.domains/"
+    }
 }
 ```
-
-
-The name of the file should be a slug. Following our example ```Veum Stroman``` that would be ```veum-stroman```
-
-Type can either be ```blockchain```or ```project```. With blockchain to be preferred for launching actual chains. 
